@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
 var _react = _interopRequireWildcard(require("react"));
-require("./css/modal.css");
+require("./Css/modal.css");
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -49,5 +49,6 @@ exports.default = _default;
 Modal.propTypes = {
   show: _propTypes.default.bool.isRequired,
   title: _propTypes.default.string,
-  titleButton: _propTypes.default.string
+  titleButton: _propTypes.default.string,
+  noCloseButton: _propTypes.default.bool
 };

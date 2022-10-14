@@ -1,14 +1,13 @@
 {
   "name": "modallowenski",
   "author": "Johan Lowenski",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "keywords": [
     "react",
     "components",
     "ui"
   ],
   "main": "dist/index.js",
-  "module": "dist/index.js",
   "files": [
     "dist",
     "README.md"

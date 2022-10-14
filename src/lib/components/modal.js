@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./css/modal.css";
+import "./Css/modal.css";
 import PropTypes from "prop-types";
 
 /**
@@ -41,4 +41,5 @@ Modal.propTypes = {
   show: PropTypes.bool.isRequired,
   title: PropTypes.string,
   titleButton: PropTypes.string,
+  noCloseButton: PropTypes.bool,
 };
