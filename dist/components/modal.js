@@ -21,24 +21,37 @@ const Modal = _ref => {
     title,
     titleButton,
     noCloseButton,
-    noButton
+    noTextButton,
+    closeOnClick,
+    noKeyEscape
   } = _ref;
   const [showModal, setShowModal] = (0, _react.useState)(true);
   const modalClose = () => {
     setShowModal(false);
+    document.location.reload();
+  };
+  document.onkeyup = function (event) {
+    if (event.code === "Escape" && !noKeyEscape) {
+      modalClose();
+    }
+  };
+  document.onclick = function (event) {
+    if (event.target.id === "modalContainer" && closeOnClick) {
+      modalClose();
+    }
   };
   return showModal && show && /*#__PURE__*/_react.default.createElement("div", {
     id: "modalContainer"
   }, /*#__PURE__*/_react.default.createElement("div", {
     id: "confirmation",
     className: "modal"
-  }, /*#__PURE__*/_react.default.createElement("span", null, title ? title : "Employee Created!"), !noCloseButton && /*#__PURE__*/_react.default.createElement("button", {
+  }, /*#__PURE__*/_react.default.createElement("span", null, title ? title : "Modal Title"), !noCloseButton && /*#__PURE__*/_react.default.createElement("button", {
     className: "modalClose",
     title: "Hide Modal",
     onClick: modalClose
   }, "X"), /*#__PURE__*/_react.default.createElement("div", {
     className: "modalContent"
-  }, !noButton && /*#__PURE__*/_react.default.createElement("button", {
+  }, !noTextButton && /*#__PURE__*/_react.default.createElement("button", {
     className: "modalCloseEnd",
     title: "close",
     onClick: modalClose
@@ -50,5 +63,8 @@ Modal.propTypes = {
   show: _propTypes.default.bool.isRequired,
   title: _propTypes.default.string,
   titleButton: _propTypes.default.string,
-  noCloseButton: _propTypes.default.bool
+  noCloseButton: _propTypes.default.bool,
+  noTextButton: _propTypes.default.bool,
+  closeOnClick: _propTypes.default.bool,
+  noKeyEscape: _propTypes.default.bool
 };
